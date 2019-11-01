@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,4 +16,19 @@ Route::get('/', function () {
 
 Route::get('/sample', function(){
     return view('sample');
+});
+
+Route::post('/login', function(Illuminate\Http\Request $request){
+    $key_username = "username";
+    $key_password = "password";
+    if(!$request->has($key_username) || !$request->has($key_password)) return redirect('/sample');
+    $param_username = $request->input($key_username);
+    $param_password = $request->input($key_password);
+    // Verify that user exists and have right credentials before displaying the dashboard
+    $user = App\User::select('password')
+                    ->where('username', $param_username)
+                    ->first();
+    if(!$user) return redirect('/sample');
+    if(!password_verify($param_password, $user->password)) return redirect('/sample');
+    return "Login Successful";
 });
