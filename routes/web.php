@@ -14,6 +14,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/feedback',function(){
+    return view('feedback');
+});
+
 Route::post('/login', function(Illuminate\Http\Request $request){
     $key_username = "username";
     $key_password = "password";

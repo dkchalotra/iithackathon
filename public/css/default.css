@@ -1,3 +1,11 @@
 body{
     min-width:100%;
 }
+
+.feedback-panel{
+    padding:10%;
+    border:1px solid #eeeeee;
+    margin-top:50%;
+    box-shadow:1px 1px #bbbbbb;
+    
+}
