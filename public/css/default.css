@@ -2,7 +2,6 @@ body {
     min-width: 100%;
     background-color: #FFFFFF;
 }
-
 .login-panel {
     margin-top: 5%;
     border: 1px solid #EEEEEE;
@@ -31,4 +30,10 @@ input[type=password] {
     border-bottom: 1px solid #CCCCCC;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
+=======
+.feedback-panel{
+    padding:10%;
+    border:1px solid #eeeeee;
+    margin-top:50%;
+    box-shadow:1px 1px #bbbbbb;
 }
