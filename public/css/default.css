@@ -1,11 +1,39 @@
-body{
-    min-width:100%;
+body {
+    min-width: 100%;
+    background-color: #FFFFFF;
+}
+.login-panel {
+    margin-top: 5%;
+    border: 1px solid #EEEEEE;
+    background-color: #FFFFFF;
+    padding-top: 6%;
+    padding-bottom: 6%;
+    box-shadow: 1px 1px #BBBBBB;
 }
 
+img {
+    height: 7pc;
+    width: 8pc;
+    margin-left: 7pc;
+    border-radius: 50%;
+}
+
+input[type=text] {
+    border: none;
+    border-bottom: 1px solid #DDDDDD;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+input[type=password] {
+    border: none;
+    border-bottom: 1px solid #CCCCCC;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+=======
 .feedback-panel{
     padding:10%;
     border:1px solid #eeeeee;
     margin-top:50%;
     box-shadow:1px 1px #bbbbbb;
-    
 }
