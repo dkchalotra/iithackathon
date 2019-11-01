@@ -11,8 +11,7 @@
           </div> 
          <br/>
   
-                <form>
-                       
+                <form>                       
                       <div class="form-group">
                           <label for="exampleInputEmail1">Username</label>
                           <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
@@ -23,7 +22,7 @@
                           <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                       </div>
                       <br/>
-                      <button type="submit" class="btn btn-primary">Login</button>
+                      <button type="submit" class="btn btn-primary col-12">Login</button>
                 </form>
         </div>
     </div>

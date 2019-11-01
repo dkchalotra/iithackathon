@@ -19,10 +19,6 @@ img {
     border-radius: 50%;
 }
 
-button {
-    width: 22pc;
-}
-
 input[type=text] {
     border: none;
     border-bottom: 1px solid #DDDDDD;
