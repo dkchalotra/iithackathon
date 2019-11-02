@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Meal extends Model
+class Feedback extends Model
 {
     public $timestamps = false;
 }
