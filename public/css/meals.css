@@ -1,0 +1,25 @@
+body {
+    min-width: 100%;
+    background-color: #FFFFFF;
+}
+.mealdescpanel{
+    padding:10%;
+    border:1px solid #eeeeee;
+    box-shadow:1px 1px #bbbbbb;
+}
+.columndetails{
+    padding-left:3%;
+    padding-top:1%;
+    padding-bottom:1%;
+    border:1px solid #eeeeee;
+    box-shadow:1px 1px #bbbbbb;
+    margin-bottom:1%;
+}
+.button{
+    background-color:red;
+    color:white;
+    display:inline-block;
+    text-align:center;
+    border:none;
+
+}
