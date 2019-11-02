@@ -23,3 +23,9 @@ body {
     border:none;
 
 }
+.form{
+    
+    padding:1em 5em;
+    border:1px solid #eeeeee;
+    box-shadow:1px 1px #bbbbbb;
+}

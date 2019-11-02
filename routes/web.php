@@ -54,7 +54,10 @@ Route::get('/feedback',function(Illuminate\Http\Request $request){
     if(!hasAuthenticated($request)) return redirect('/');
     return view('feedback');
 });
+Route::get('/sample',function(){
+    return view("feedbackform");
 
+});
 // This method is used to check whether user is authenticated before accessing any admin panel pages
 function hasAuthenticated(Illuminate\Http\Request $request){
     if($request->session()->has(SESSION_KEY_USERNAME) && $request->session()->has(SESSION_KEY_PASSWORD)){
