@@ -1,24 +1,10 @@
-body {
-    min-width: 100%;
-    background-color: #FFFFFF;
-}
-
-.col {
+.feedback-item {
     margin-top: 7px;
     border: 1px solid #EEEEEE;
     background-color: #FFFFFF;
     box-shadow: 1px 1px #AAAAAA;
-    border-radius: 5px;
-}
-
-.buttoncontainer button {
-    width: 12%;
-    margin-bottom: 3px;
-    border-radius: 5px;
-}
-
-.container-fluid {
-    margin-left: 5px;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 .first {
@@ -33,27 +19,56 @@ body {
 }
 
 .student_name {
-    font-size: 20pt;
+    font-size: 18pt;
 }
 
 .food_item {
-    font-size: 17pt;
-}
-
-.feedback {
     font-size: 14pt;
 }
 
-.submitted {
-    font-size: 13pt;
+.feedback {
+    font-size: 12pt;
 }
 
+.submitted {
+    font-size: 10pt;
+}
+.student_name, .food_item, .feedback , .submitted{
+    color: #333333;
+    margin-bottom: 0.5em;
+}
 select {
-    margin: 5px 5px 5px 0;
+    margin: 1% 1% 1% 0;
     border-radius: 5px;
 }
 
 .btn button {
     background-color: green;
     width: 100%;
+}
+
+#menubtn {
+    margin-left: 2%;
+    width: 31%;
+}
+
+.form-group {
+    padding-left: 2%;
+}
+.sdetails {
+    padding-top: 2%;
+    margin-top: 3%;
+    padding-left: 4%;
+    padding-right: 4%;
+    border: 1px solid #EEEEEE;
+    background-color: #FFFFFF;
+    box-shadow: 1px 1px #BBBBBB;
+}
+
+.sdetails input[type=text] {
+    margin-bottom: 4%;
+}
+
+.sdetails button {
+    width: 40%;
 }
