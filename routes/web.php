@@ -20,6 +20,9 @@ Route::get('/menu', function () {
     return view('menu');
 });
 
+Route::get('/student', function () {
+    return view('student');
+});
 Route::post('/login', function(Illuminate\Http\Request $request){
     $key_username = "username";
     $key_password = "password";
