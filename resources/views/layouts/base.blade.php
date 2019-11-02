@@ -6,6 +6,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         @section('head_includes')
             <link rel="stylesheet" href="css/bootstrap.css">
+            <link rel="stylesheet" href="css/fontawesome.css">
             <link rel="stylesheet" href="css/default.css">
         @show
     </head>
@@ -16,6 +17,7 @@
         <script src="js/jquery-3.4.1.js"></script>
         <script src="js/popper.js"></script>
         <script src="js/bootstrap.js"></script>
+        <script src="js/fontawesome.js"></script>
         @show
     </body>
 </html>

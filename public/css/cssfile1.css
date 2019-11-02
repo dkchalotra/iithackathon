@@ -1,15 +1,20 @@
+<<<<<<< HEAD
 .col {
+=======
+body {
+    min-width: 100%;
+    background-color: #FFFFFF;
+    margin-top: 1%;
+}
+
+.feedback-item {
+>>>>>>> f17cb42cb28c96afe473b82068108ccc0247fb84
     margin-top: 7px;
     border: 1px solid #EEEEEE;
     background-color: #FFFFFF;
     box-shadow: 1px 1px #AAAAAA;
-    border-radius: 5px;
-}
-
-.buttoncontainer button {
-    width: 12%;
-    margin-bottom: 3px;
-    border-radius: 5px;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 .first {
@@ -24,21 +29,24 @@
 }
 
 .student_name {
-    font-size: 20pt;
+    font-size: 18pt;
 }
 
 .food_item {
-    font-size: 17pt;
-}
-
-.feedback {
     font-size: 14pt;
 }
 
-.submitted {
-    font-size: 13pt;
+.feedback {
+    font-size: 12pt;
 }
 
+.submitted {
+    font-size: 10pt;
+}
+.student_name, .food_item, .feedback , .submitted{
+    color: #333333;
+    margin-bottom: 0.5em;
+}
 select {
     margin: 1% 1% 1% 0;
     border-radius: 5px;

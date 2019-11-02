@@ -40,10 +40,6 @@ input[type=password] {
     box-shadow: 1px 1px #bbbbbb;
 }
 
-.col {
-    border: 1px solid black;
-}
-
 .buttoncontainer button {
     width: 12%;
     margin-top: 3px;
@@ -81,4 +77,5 @@ div.right-pane{
     height: 95vh;
     width: auto;
     overflow-y:scroll;
+    overflow-x:hidden;
 }
