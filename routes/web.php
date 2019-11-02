@@ -22,6 +22,10 @@ Route::get('/feedback',function(){
     return view('feedback');
 });
 
+Route::get('/dashboard',function(){
+    return view('dashboard');
+});
+
 Route::post('/login', function(Illuminate\Http\Request $request){
     $key_username = "username";
     $key_password = "password";
