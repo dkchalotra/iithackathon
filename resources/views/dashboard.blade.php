@@ -31,6 +31,7 @@
                 <option value="2">Lunch</option>
                 <option value="3">Dinner</option>
             </select>
+            <button class="btn btn-sm btn-secondary">Apply</button>
         </div>
     </div>
     <hr>

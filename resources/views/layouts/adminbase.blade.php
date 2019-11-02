@@ -11,16 +11,19 @@
         @show
     </head>
     <body>
-        <div class="text-center" style="background-color:#888888;color:#FFFFFF;font-size:16pt;font-weight:100;letter-spacing:0.2em;height:5vh;">Admin Panel</div>
+        <div class="text-center" style="background-color:#888888;color:#FFFFFF;font-size:16pt;font-weight:100;letter-spacing:0.2em;height:5vh;">
+            Admin Panel
+            <a class="btn btn-sm btn-secondary" style="float:right;letter-spacing:0;" href="/logout">Logout</a>
+        </div>
         <div class="container-fluid" style="padding:0;">
             <div class="row">
                 <div class="col-3 p-0">
                         <div class="left-pane">
                                 <ul class="pane-navigation">
-                                    <li><a href="/dashboard">Dashboard</a></li>
-                                    <li><a href="/meals">Meals</a></li>
-                                    <li><a href="/students">Students</a></li>
-                                    <li><a href="/meal-menu">Meal Menu</a></li>
+                                    <li><a href="/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                                    <li><a href="/meals"><i class="fas fa-utensils"></i> Meals</a></li>
+                                    <li><a href="/students"><i class="fas fa-user-graduate"></i> Students</a></li>
+                                    <li><a href="/meal-menu"><i class="fas fa-bars"></i> Meal Menu</a></li>
                                 </ul>
                         </div>
                 </div>
