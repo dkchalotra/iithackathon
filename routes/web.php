@@ -36,3 +36,20 @@ Route::post('/login', function(Illuminate\Http\Request $request){
     if(!password_verify($param_password, $user->password)) return redirect('/sample');
     return "Login Successful";
 });
+
+Route::get('/sample', function(){
+    return view('layouts.adminbase');
+});
+
+Route::get('/dashboard', function(){
+    return "Dashboard";
+});
+Route::get('/meals', function(){
+    return "Meals";
+});
+Route::get('/students', function(){
+    return "Students";
+});
+Route::get('/meal-menu', function(){
+    return "Meal Menu";
+});
