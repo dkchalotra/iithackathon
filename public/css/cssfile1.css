@@ -1,0 +1,59 @@
+body {
+    min-width: 100%;
+    background-color: #FFFFFF;
+}
+
+.col {
+    margin-top: 7px;
+    border: 1px solid #EEEEEE;
+    background-color: #FFFFFF;
+    box-shadow: 1px 1px #AAAAAA;
+    border-radius: 5px;
+}
+
+.buttoncontainer button {
+    width: 12%;
+    margin-bottom: 3px;
+    border-radius: 5px;
+}
+
+.container-fluid {
+    margin-left: 5px;
+}
+
+.first {
+    background-color: #FFFFFF;
+    margin-left: 1%;
+}
+
+.second {
+    background-color: #FFFFFF;
+    margin-left: 1%;
+    margin-top: 5px;
+}
+
+.student_name {
+    font-size: 20pt;
+}
+
+.food_item {
+    font-size: 17pt;
+}
+
+.feedback {
+    font-size: 14pt;
+}
+
+.submitted {
+    font-size: 13pt;
+}
+
+select {
+    margin: 5px 5px 5px 0;
+    border-radius: 5px;
+}
+
+.btn button {
+    background-color: green;
+    width: 100%;
+}

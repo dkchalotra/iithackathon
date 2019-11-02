@@ -2,6 +2,7 @@ body {
     background-color: #FFFFFF;
     overflow-x: hidden;
 }
+
 .login-panel {
     margin-top: 5%;
     border: 1px solid #EEEEEE;
@@ -31,12 +32,24 @@ input[type=password] {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
 }
-.feedback-panel{
-    padding:10%;
-    border:1px solid #eeeeee;
-    margin-top:50%;
-    box-shadow:1px 1px #bbbbbb;
+
+.feedback-panel {
+    padding: 10%;
+    border: 1px solid #eeeeee;
+    margin-top: 50%;
+    box-shadow: 1px 1px #bbbbbb;
 }
+
+.col {
+    border: 1px solid black;
+}
+
+.buttoncontainer button {
+    width: 12%;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
 div.left-pane{
     background-color: #EEEEEE;
     height: 95vh;
