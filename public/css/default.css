@@ -1,6 +1,6 @@
 body {
-    min-width: 100%;
     background-color: #FFFFFF;
+    overflow-x: hidden;
 }
 
 .login-panel {
@@ -48,4 +48,37 @@ input[type=password] {
     width: 12%;
     margin-top: 3px;
     margin-bottom: 3px;
+}
+
+div.left-pane{
+    background-color: #EEEEEE;
+    height: 95vh;
+    overflow-y: auto;
+}
+div.left-pane > ul.pane-navigation{
+    list-style-type: none;
+    padding: 0;
+    text-align:center;
+}
+div.left-pane > ul.pane-navigation > li > a{
+    display:block;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+div.left-pane > ul.pane-navigation > li > a{
+    color: #000000;
+    font-weight: 100;
+    letter-spacing: 0.2em;
+    text-decoration: none;
+}
+div.left-pane > ul.pane-navigation > li:hover{
+    background-color: #DDDDDD;
+}
+div.left-pane > ul.pane-navigation > li:not(:last-child){
+    border-bottom: 1px solid #DDDDDD;
+}
+div.right-pane{
+    height: 95vh;
+    width: auto;
+    overflow-y:scroll;
 }
