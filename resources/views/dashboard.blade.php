@@ -1,15 +1,13 @@
-@extends('layouts.base')
-@section('page_title', "Feedback Dashboard")
-
+@extends('layouts.adminbase')
+@section('page_title', "Dashboard | Admin Panel")
 @section('head_includes')
     @parent
     <link rel="stylesheet" href="css/cssfile1.css">
 @show
 @section('content')
-
 <div class="container-fluid">
-    <div class="row">
-        <div class="col">
+    <div class="row m-0">
+        <div class="col p-0">
             Feedback:
             <select name="view">
                 <option value="0" selected disabled>View</option>
@@ -35,59 +33,34 @@
             </select>
         </div>
     </div>
+    <hr>
 
-   
-    <div class="row">
-        <div class="col">
-            <div class="first">
-                <div class="student_name">
-                    ABC:
-                </div>
-                <div class="food_item">
-                    XYZ
-                </div>
-                <div class="feedback">
-                    food not found
-                </div>
-                <div class="submitted">
-                    Timming:
-                </div>
-                <div class="btn">
-                    <button type="button" class="btn btn-primary col-12">Delete</button>
+    @foreach($feedbacks as $feedback)
+    <div class="row m-0">
+            <div class="col feedback-item">
+                <div class="first">
+                    <div class="student_name">
+                        <i class="fas fa-user"></i> {{$feedback->student->name}}
+                    </div>
+                    <div class="food_item">
+                        <i class="fas fa-utensils"></i> {{$feedback->meal->mname}}
+                    </div>
+                    <div class="feedback">
+                            <i class="fas fa-pen-square"></i> {{$feedback->feedback}}
+                    </div>
+                    <div class="submitted">
+                            <i class="fas fa-clock"></i>
+                            {{Carbon\Carbon::parse($feedback->created_at)->format('d M Y')}}
+                    </div>
+                    <button type="button" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i> Delete</button>
                 </div>
             </div>
         </div>
-    </div>
-
-   
+    @endforeach
+    <br>
     <div class="row">
         <div class="col">
-            <div class="second">
-                <div class="student_name">
-                        ABC:
-                </div>
-                <div class="food_item">
-                        XYZ
-                </div>
-                <div class="feedback">
-                        food not found
-                </div>
-                <div class="submitted">
-                        Timming:
-                </div>
-                <div class="btn">
-                    <button type="button" class="btn btn-primary col-12">Delete</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="row">
-        <div class="col">
-            <div class="buttoncontainer">
-                <button type="button" class="btn btn-primary col-12">Next</button>
-            </div>
+            {{ $feedbacks->render() }}
         </div>
     </div>
 </div>

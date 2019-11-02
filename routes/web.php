@@ -36,7 +36,9 @@ Route::post('/login', function(Illuminate\Http\Request $request){
 
 Route::get('/dashboard', function(Illuminate\Http\Request $request){
     if(!hasAuthenticated($request)) return redirect('/');
-    return "Dashboard";
+    $perpage = 5;
+    $feedbacks = App\Feedback::paginate($perpage);
+    return view('dashboard', ['feedbacks' => $feedbacks]);
 });
 Route::get('/meals', function(Illuminate\Http\Request $request){
     if(!hasAuthenticated($request)) return redirect('/');
