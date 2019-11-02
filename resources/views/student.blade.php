@@ -8,7 +8,7 @@
 @section('content')
 
 <div class="row">
-    <div class="col-8 offset-2">
+    <div class="col-8 offset-2">git 
         <form id="menu" action="" method="POST">
             <div class="sdetails">
                 <div class="form-group">
@@ -18,7 +18,7 @@
                     <label for="sname">Name</label>
                     <input class="form-control" type="text" placeholder="Enter Yor Full Name">
                     <label for="semail">E-mail Address</label>
-                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+                    <input type="text" class="form-control-plaintext" id="staticEmail" placeholder="email@example.com">
                     <label for="scontact">Contact Number</label>
                     <input class="form-control" type="text" placeholder="e.g 9022111101">
                     <button type="submit" class="btn btn-primary mb-2">Submit</button>

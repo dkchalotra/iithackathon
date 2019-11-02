@@ -69,8 +69,7 @@ Route::get('/feedback',function(Illuminate\Http\Request $request){
     if(!hasAuthenticated($request)) return redirect('/');
     return view('feedback');
 });
-Route::get('/sample',function(){
-    return view("feedbackform");
+
 
 Route::get('/logout', function(Illuminate\Http\Request $request){
     $request->session()->forget([SESSION_KEY_USERNAME, SESSION_KEY_PASSWORD]);
