@@ -55,3 +55,20 @@ select {
 .form-group {
     padding-left: 2%;
 }
+.sdetails {
+    padding-top: 2%;
+    margin-top: 3%;
+    padding-left: 4%;
+    padding-right: 4%;
+    border: 1px solid #EEEEEE;
+    background-color: #FFFFFF;
+    box-shadow: 1px 1px #BBBBBB;
+}
+
+.sdetails input[type=text] {
+    margin-bottom: 4%;
+}
+
+.sdetails button {
+    width: 40%;
+}
