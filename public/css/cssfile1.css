@@ -1,14 +1,4 @@
-<<<<<<< HEAD
-.col {
-=======
-body {
-    min-width: 100%;
-    background-color: #FFFFFF;
-    margin-top: 1%;
-}
-
 .feedback-item {
->>>>>>> f17cb42cb28c96afe473b82068108ccc0247fb84
     margin-top: 7px;
     border: 1px solid #EEEEEE;
     background-color: #FFFFFF;
@@ -65,7 +55,6 @@ select {
 .form-group {
     padding-left: 2%;
 }
-
 .sdetails {
     padding-top: 2%;
     margin-top: 3%;
@@ -83,5 +72,3 @@ select {
 .sdetails button {
     width: 40%;
 }
-
-q
