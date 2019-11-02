@@ -22,8 +22,8 @@ Route::get('/feedback',function(){
     return view('feedback');
 });
 
-Route::get('/samplecss',function(){
-    return view('samplecss');
+Route::get('/mealdetails',function(){
+    return view('mealdetails');
 });
 
 Route::post('/login', function(Illuminate\Http\Request $request){
