@@ -1,6 +1,7 @@
 body {
     min-width: 100%;
     background-color: #FFFFFF;
+    margin-top: 1%;
 }
 
 .feedback-item {
@@ -47,6 +48,20 @@ body {
     margin-bottom: 0.5em;
 }
 select {
-    margin: 5px 5px 5px 0;
+    margin: 1% 1% 1% 0;
+    border-radius: 5px;
 }
 
+.btn button {
+    background-color: green;
+    width: 100%;
+}
+
+#menubtn {
+    margin-left: 2%;
+    width: 31%;
+}
+
+.form-group {
+    padding-left: 2%;
+}
