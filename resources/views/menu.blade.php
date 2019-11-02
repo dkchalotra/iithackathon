@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.adminbase')
 @section('page_title', "Feedback Dashboard")
 
 @section('head_includes')
@@ -7,10 +7,11 @@
 @show
 @section('content')
 <div class="row">
-    <div class="col-4 offset-4">
+    <div class="col-8 offset-2">
+    <div class="menudiv">
     <form id="menu" action="" method="POST">
         <div class="form-group">
-            <label for="lbl">Weekly Menu Prepration</label>
+            <h2 class="text-center">Weekly Menu Prepration</h2>
             <label for="exampleFormControlSelect1">Select Day:</label>
             <select class="form-control" id="exampleFormControlSelect1">
                 <option value="0" selected disabled>Day</option>
@@ -46,6 +47,7 @@
         <div class="buttoncontainer">
             <button type="button" id="menubtn" class="btn btn-primary col-12">Next</button>
         </div>
+    </div>
     </form>
     </div>
 </div>
