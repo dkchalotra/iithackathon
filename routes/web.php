@@ -16,13 +16,7 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('/menu', function () {
-    return view('menu');
-});
 
-Route::get('/student', function () {
-    return view('student');
-});
 Route::post('/login', function(Illuminate\Http\Request $request){
     $key_username = "username";
     $key_password = "password";
@@ -57,13 +51,13 @@ Route::post('/meals', function(Illuminate\Http\Request $request){
 
 });
 
-Route::get('/students', function(Illuminate\Http\Request $request){
+Route::get('/student', function(Illuminate\Http\Request $request){
     if(!hasAuthenticated($request)) return redirect('/');
-    return "Students";
+    return view("student");
 });
-Route::get('/meal-menu', function(Illuminate\Http\Request $request){
+Route::get('/menu', function(Illuminate\Http\Request $request){
     if(!hasAuthenticated($request)) return redirect('/');
-    return "Meal Menu";
+    return view("menu");
 });
 Route::get('/feedback',function(Illuminate\Http\Request $request){
     if(!hasAuthenticated($request)) return redirect('/');

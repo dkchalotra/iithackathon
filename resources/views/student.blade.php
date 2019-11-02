@@ -8,7 +8,7 @@
 @section('content')
 
 <div class="row">
-    <div class="col-8 offset-2">git 
+    <div class="col-8 offset-2"> 
         <form id="menu" action="" method="POST">
             <div class="sdetails">
                 <div class="form-group">
