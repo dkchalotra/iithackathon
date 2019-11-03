@@ -112,6 +112,8 @@ Route::get('/student/delete/{id}', function($id){
 
 Route::get('/meal-menu', function(Illuminate\Http\Request $request){
     if(!hasAuthenticated($request)) return redirect('/');
+    // Retrieve all meal items
+    $allmeals = App\Meal::all();
     // Retrieve two dimensional array for mess menu
     $mealTime = DB::table('meal_times')
                 ->join('meals', 'meal_times.meal_id', 'meals.id')
@@ -129,7 +131,34 @@ Route::get('/meal-menu', function(Illuminate\Http\Request $request){
     }
     $days = array('sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday');
     $times = array('breakfast', 'lunch', 'dinner');
-    return view("menu", ['messData' => $messData, 'days' => $days, 'times' => $times]);
+    return view("menu", ['messData' => $messData, 'days' => $days, 'times' => $times, 'allmeals' => $allmeals]);
+});
+
+Route::post('/meal-menu', function(Illuminate\Http\Request $request){
+    if(!hasAuthenticated($request)) return redirect('/');
+    $key_meal_day = "day";
+    $key_meal_time = "meal-time";
+    $key_meal_item = "meal-item";
+    if(!$request->has($key_meal_day) || $request->has($key_meal_time) || $request->has($key_meal_item))
+        Redirect::back();
+    $meal_day = $request->get($key_meal_day);
+    $meal_time = $request->get($key_meal_time);
+    $meal_items = $request->get($key_meal_item);
+    DB::table('meal_times')
+        ->where('time', '=', $meal_time)
+        ->where('day', '=', $meal_day)
+        ->delete();
+    if(isset($meal_items) && !empty($meal_items)){
+        foreach($meal_items as $meal_item_id){
+            $meal = App\Meal::findOrFail($meal_item_id);
+            $new_meal_time = new App\MealTime();
+            $new_meal_time->meal_id = $meal->id;
+            $new_meal_time->time = $meal_time;
+            $new_meal_time->day = $meal_day;
+            $new_meal_time->save();
+        }
+    }
+    return Redirect::back()->with('message', 'Weekly Meal Menu is updated successfully');
 });
 
 Route::get('/logout', function(Illuminate\Http\Request $request){
