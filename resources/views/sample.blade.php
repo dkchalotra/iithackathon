@@ -1,4 +1,4 @@
-@extends('layouts.adminbase')
+@extends('layouts.design')
 @section('page_title', "Feedback Dashboard")
 
 @section('head_includes')

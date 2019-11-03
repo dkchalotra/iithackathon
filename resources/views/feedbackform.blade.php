@@ -1,5 +1,6 @@
-@extends("layouts.base")
-@section("page_title",'Feedback Form')
+@extends("layouts.design")
+@section("page_title",'Feedback form')
+
 @section('head_includes')
 @parent
 <link rel="stylesheet" href="css/meals.css">
