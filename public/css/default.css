@@ -46,36 +46,42 @@ input[type=password] {
     margin-bottom: 3px;
 }
 
-div.left-pane{
+div.left-pane {
     background-color: #EEEEEE;
     height: 95vh;
     overflow-y: auto;
 }
-div.left-pane > ul.pane-navigation{
+
+div.left-pane>ul.pane-navigation {
     list-style-type: none;
     padding: 0;
-    text-align:center;
+    text-align: center;
 }
-div.left-pane > ul.pane-navigation > li > a{
-    display:block;
+
+div.left-pane>ul.pane-navigation>li>a {
+    display: block;
     padding-top: 1em;
     padding-bottom: 1em;
 }
-div.left-pane > ul.pane-navigation > li > a{
+
+div.left-pane>ul.pane-navigation>li>a {
     color: #000000;
     font-weight: 100;
     letter-spacing: 0.2em;
     text-decoration: none;
 }
-div.left-pane > ul.pane-navigation > li:hover{
+
+div.left-pane>ul.pane-navigation>li:hover {
     background-color: #DDDDDD;
 }
-div.left-pane > ul.pane-navigation > li:not(:last-child){
+
+div.left-pane>ul.pane-navigation>li:not(:last-child) {
     border-bottom: 1px solid #DDDDDD;
 }
-div.right-pane{
+
+div.right-pane {
     height: 95vh;
     width: auto;
-    overflow-y:scroll;
-    overflow-x:hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }

@@ -1,4 +1,4 @@
-@extends("layouts.adminbase")
+@extends("layouts.design")
 @section("page_title",'Meal Details | Admin Panel')
 @section('head_includes')
 @parent
