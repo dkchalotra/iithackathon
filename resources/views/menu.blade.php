@@ -51,4 +51,182 @@
     </form>
     </div>
 </div>
+<div class="weeklymenu">
+        <h2 class="text-center">Mess Weekly Menu</h2>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Time/Day</th>
+                <th scope="col">Sunday</th>
+                <th scope="col">Monday</th>
+                <th scope="col">Tuesday</th>
+                <th scope="col">wednesday</th>
+                <th scope="col">Thursday</th>
+                <th scope="col">Friday</th>
+                <th scope="col">Saturday</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Breakfast</th>
+                <td>
+                    <ul>
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                    </ul>
+                </td>
+                 <td>
+                    <ul>
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                    </ul>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">Lunch</th>
+                <td>
+                    <ul>
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                    </ul>
+                </td>
+                 <td>
+                    <ul>
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                    </ul>
+                </td>
+              </tr>
+              
+              <tr>
+                <th scope="row">Dinner</th>
+                <td>
+                    <ul>
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                    </ul>
+                </td>
+              </tr>
+
+            </tbody>
+        </table>
+    </div>
 @endsection

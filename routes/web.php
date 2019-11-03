@@ -16,6 +16,10 @@ Route::get('/', function () {
     return view('login');
 });
 
+Route::get('/showmenu', function () {
+    return view('showmenu');
+});
+
 
 Route::post('/login', function(Illuminate\Http\Request $request){
     $key_username = "username";
