@@ -99,3 +99,8 @@ select {
     background-color: #FFFFFF;
     box-shadow: 1px 1px #BBBBBB;
 }
+
+ul {
+    padding: 0;
+    margin: 0;
+}
