@@ -45,7 +45,7 @@
         </div>
         
         <div class="buttoncontainer">
-            <button type="button" id="menubtn" class="btn btn-primary col-12">Next</button>
+            <button type="button" id="menubtn" class="btn btn-primary col-12">Update</button>
         </div>
     </div>
     </form>
@@ -172,7 +172,7 @@
                     </ul>
                 </td>
               </tr>
-              
+
               <tr>
                 <th scope="row">Dinner</th>
                 <td>
@@ -225,7 +225,7 @@
                     </ul>
                 </td>
               </tr>
-
+              
             </tbody>
         </table>
     </div>
