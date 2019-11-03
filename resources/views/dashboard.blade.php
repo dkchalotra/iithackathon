@@ -8,7 +8,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="row m-0">
-        <div class="col p-0">
+        <div class="col-9 p-0">
             Feedback:
             <select name="view">
                 <option value="0" selected disabled>View</option>
@@ -32,7 +32,13 @@
                 <option value="2">Lunch</option>
                 <option value="3">Dinner</option>
             </select>
-            <button class="btn btn-sm btn-secondary">Apply</button>
+            <button class="btn btn-sm btn-secondary" style="width: 8%;">Apply</button>
+        </div>
+        <div class="col-3 p-0">
+            <div class="searchbar">
+                <input class="search_input" type="text" name="" placeholder="Search..." style="margin-top:6%; margin-left:25%;">
+                <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+            </div>
         </div>
     </div>
     <hr>
