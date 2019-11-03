@@ -4,6 +4,7 @@
 @parent
 <link rel="stylesheet" href="css/meals.css">
 @endsection
+@section('title', 'Meals Information')
 @section('content')
 <div class="row">
     <div class ="col-8 offset-2 mt-3">

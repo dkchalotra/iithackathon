@@ -1,10 +1,11 @@
-@extends('layouts.adminbase')
+@extends('layouts.design')
 @section('page_title', "Students | Admin Panel")
 
 @section('head_includes')
     @parent
     <link rel="stylesheet" href="css/cssfile1.css">
 @endsection
+@section('title', 'Students')
 @section('content')
 @if(session()->has('message'))
 <br>

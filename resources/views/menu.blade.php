@@ -1,10 +1,11 @@
-@extends('layouts.adminbase')
+@extends('layouts.design')
 @section('page_title', "Feedback Dashboard")
 
 @section('head_includes')
     @parent
     <link rel="stylesheet" href="css/cssfile1.css">
 @show
+@section('title', 'Meal Menu')
 @section('content')
 <div class="row">
     <div class="col-8 offset-2">
@@ -43,7 +44,7 @@
                 <option value="3">Dinner</option>
             </select>
         </div>
-        
+
         <div class="buttoncontainer">
             <button type="button" id="menubtn" class="btn btn-primary col-12">Update</button>
         </div>
@@ -225,7 +226,7 @@
                     </ul>
                 </td>
               </tr>
-              
+
             </tbody>
         </table>
     </div>
