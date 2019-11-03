@@ -1,4 +1,4 @@
-@extends("layouts.base")
+@extends("layouts.design")
 @section("page_title",'Feedback Page')
 @section('head_includes')
 @parent

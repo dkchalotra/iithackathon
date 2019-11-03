@@ -16,8 +16,8 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('/showmenu', function () {
-    return view('showmenu');
+Route::get('/sample', function () {
+    return view('sample');
 });
 
 
