@@ -22,7 +22,7 @@
                                 <ul class="pane-navigation">
                                     <li><a href="/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
                                     <li><a href="/meals"><i class="fas fa-utensils"></i> Meals</a></li>
-                                    <li><a href="/students"><i class="fas fa-user-graduate"></i> Students</a></li>
+                                    <li><a href="/student"><i class="fas fa-user-graduate"></i> Student</a></li>
                                     <li><a href="/meal-menu"><i class="fas fa-bars"></i> Meal Menu</a></li>
                                 </ul>
                         </div>

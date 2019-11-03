@@ -63,15 +63,49 @@ Route::post('/meals', function(Illuminate\Http\Request $request){
 
 Route::get('/meals/delete/{id}', function($id){
     $meal = App\Meal::findOrFail($id);
+    $meal->feedbacks()->delete();
     $meal->delete();
-    return redirect()->back()->with('message', 'Meal Deleted');
+    return redirect()->back()->with('message', $meal->mname . ' Deleted');
 });
 
 Route::get('/student', function(Illuminate\Http\Request $request){
     if(!hasAuthenticated($request)) return redirect('/');
-    return view("student");
+    $perpage = 5;
+    $students = App\Student::orderBy('id', 'desc')->paginate($perpage);
+    return view("student", ['students' => $students]);
 });
-Route::get('/menu', function(Illuminate\Http\Request $request){
+Route::post('/student', function(Illuminate\Http\Request $request){
+    $key_student_name = "sname";
+    $key_student_rollno = "roll";
+    $key_student_email = "email";
+    $key_student_contactno = "contactno";
+    if(!hasAuthenticated($request)) return redirect('/');
+    if(!$request->has($key_student_name) ||
+        !$request->has($key_student_rollno) ||
+        !$request->has($key_student_email)||
+        !$request->has($key_student_contactno))
+        return Redirect::back();
+    $student_name = $request->get($key_student_name);
+    $student_roll = $request->get($key_student_rollno);
+    $student_email = $request->get($key_student_email);
+    $student_contact = $request->get($key_student_contactno);
+    $newstudent = new App\Student();
+    $newstudent->name = $student_name;
+    $newstudent->rollno = $student_roll;
+    $newstudent->email = $student_email;
+    $newstudent->contact = $student_contact;
+    $newstudent->save();
+    return Redirect::back()->with('message', 'New Student Added');
+});
+
+Route::get('/student/delete/{id}', function($id){
+    $student = App\Student::findOrFail($id);
+    $student->feedbacks()->delete();
+    $student->delete();
+    return redirect()->back()->with('message', 'Student ' . $student->name . ' Deleted');
+});
+
+Route::get('/meal-menu', function(Illuminate\Http\Request $request){
     if(!hasAuthenticated($request)) return redirect('/');
     return view("menu");
 });
