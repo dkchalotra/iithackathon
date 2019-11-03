@@ -17,6 +17,7 @@ class CreateMealTimesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('meal_id')->unsigned();
             $table->enum('time', ['breakfast', 'lunch', 'dinner']);
+            $table->enum('day', ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']);
             $table->foreign('meal_id')
                     ->references('id')
                     ->on('meals');

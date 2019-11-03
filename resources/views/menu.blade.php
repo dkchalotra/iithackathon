@@ -1,5 +1,5 @@
 @extends('layouts.design')
-@section('page_title', "Feedback Dashboard")
+@section('page_title', "Meal Menu | Admin Panel")
 
 @section('head_includes')
     @parent
@@ -25,7 +25,6 @@
                 <option value="7">Sunday</option>
             </select>
         </div>
-
         <div class="form-group">
             <label for="exampleFormControlSelect3">Select Timming</label>
             <select class="form-control" id="exampleFormControlSelect2">
@@ -44,7 +43,6 @@
                 <option value="3">Dinner</option>
             </select>
         </div>
-
         <div class="buttoncontainer">
             <button type="button" id="menubtn" class="btn btn-primary col-12">Update</button>
         </div>
@@ -53,181 +51,27 @@
     </div>
 </div>
 <div class="weeklymenu">
-        <h2 class="text-center">Mess Weekly Menu</h2>
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Time/Day</th>
-                <th scope="col">Sunday</th>
-                <th scope="col">Monday</th>
-                <th scope="col">Tuesday</th>
-                <th scope="col">wednesday</th>
-                <th scope="col">Thursday</th>
-                <th scope="col">Friday</th>
-                <th scope="col">Saturday</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Breakfast</th>
-                <td>
-                    <ul>
-                        <li>Coffee</li>
-                        <li>Tea</li>
-                        <li>Milk</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Coffee</li>
-                        <li>Tea</li>
-                        <li>Milk</li>
-                    </ul>
-                </td>
-                 <td>
-                    <ul>
-                        <li>Coffee</li>
-                        <li>Tea</li>
-                        <li>Milk</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Coffee</li>
-                        <li>Tea</li>
-                        <li>Milk</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Coffee</li>
-                        <li>Tea</li>
-                        <li>Milk</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Coffee</li>
-                        <li>Tea</li>
-                        <li>Milk</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Coffee</li>
-                        <li>Tea</li>
-                        <li>Milk</li>
-                    </ul>
-                </td>
-              </tr>
-
-              <tr>
-                <th scope="row">Lunch</th>
-                <td>
-                    <ul>
-                        <li>Coffee</li>
-                        <li>Tea</li>
-                        <li>Milk</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Coffee</li>
-                        <li>Tea</li>
-                        <li>Milk</li>
-                    </ul>
-                </td>
-                 <td>
-                    <ul>
-                        <li>Coffee</li>
-                        <li>Tea</li>
-                        <li>Milk</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Coffee</li>
-                        <li>Tea</li>
-                        <li>Milk</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Coffee</li>
-                        <li>Tea</li>
-                        <li>Milk</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Coffee</li>
-                        <li>Tea</li>
-                        <li>Milk</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Coffee</li>
-                        <li>Tea</li>
-                        <li>Milk</li>
-                    </ul>
-                </td>
-              </tr>
-
-              <tr>
-                <th scope="row">Dinner</th>
-                <td>
-                    <ul>
-                        <li>Coffee</li>
-                        <li>Tea</li>
-                        <li>Milk</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Coffee</li>
-                        <li>Tea</li>
-                        <li>Milk</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Coffee</li>
-                        <li>Tea</li>
-                        <li>Milk</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Coffee</li>
-                        <li>Tea</li>
-                        <li>Milk</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Coffee</li>
-                        <li>Tea</li>
-                        <li>Milk</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Coffee</li>
-                        <li>Tea</li>
-                        <li>Milk</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Coffee</li>
-                        <li>Tea</li>
-                        <li>Milk</li>
-                    </ul>
-                </td>
-              </tr>
-
-            </tbody>
-        </table>
-    </div>
+    <h2 class="text-center">Mess Weekly Menu</h2>
+    <ul style="list-style-type:none;">
+    @foreach($days as $day)
+        <li class="list-item-day">
+            {{strtoupper($day)}}
+            <ul>
+            @foreach($times as $time)
+                <li class="list-item-time">
+                    {{strtoupper($time)}}
+                    <ol>
+                    @foreach($messData[$day][$time] as $mealItem)
+                        <li class="list-item-meal">
+                            {{$mealItem}}
+                        </li>
+                    @endforeach
+                    </ol>
+                </li>
+            @endforeach
+            </ul>
+        </li>
+    @endforeach
+    </ul>
+</div>
 @endsection

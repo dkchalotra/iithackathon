@@ -112,7 +112,24 @@ Route::get('/student/delete/{id}', function($id){
 
 Route::get('/meal-menu', function(Illuminate\Http\Request $request){
     if(!hasAuthenticated($request)) return redirect('/');
-    return view("menu");
+    // Retrieve two dimensional array for mess menu
+    $mealTime = DB::table('meal_times')
+                ->join('meals', 'meal_times.meal_id', 'meals.id')
+                ->select('meals.mname', 'meal_times.day', 'meal_times.time')
+                ->get();
+    $messData = [[array()]];
+    foreach($mealTime as $mt){
+        if (!isset($messData[$mt->day])) {
+            $messData[$mt->day] = [];
+        }
+        if(!isset($messData[$mt->day][$mt->time])){
+            $messData[$mt->day][$mt->time] = array();
+        }
+        array_push($messData[$mt->day][$mt->time], $mt->mname);
+    }
+    $days = array('sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday');
+    $times = array('breakfast', 'lunch', 'dinner');
+    return view("menu", ['messData' => $messData, 'days' => $days, 'times' => $times]);
 });
 
 Route::get('/logout', function(Illuminate\Http\Request $request){
@@ -124,7 +141,7 @@ Route::get('/feedback',function(Illuminate\Http\Request $request){
     // Get all meals items available in the meal time
     $mealtimes = DB::table('meal_times')
             ->join('meals', 'meal_times.meal_id', '=', 'meals.id')
-            ->select('meal_times.meal_id', 'meals.mname', 'meal_times.time')
+            ->select('meal_times.meal_id', 'meals.mname', 'meal_times.time', 'meal_times.day')
             ->get();
     return view('feedbackform', ['mealtimes' => $mealtimes]);
 });

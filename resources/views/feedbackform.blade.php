@@ -27,6 +27,16 @@
                     <div class="form-group">
                         <input type="rollno" name="roll" class="form-control" id="exampleInputRollNo" placeholder="Enter roll no.">
                     </div><br>
+                    <h5>Select Day</h5>
+                    <select id="daybox" class="form-control">
+                        <option class="dropdown-item" value="sunday">Sunday</option>
+                        <option class="dropdown-item" value="monday">Monday</option>
+                        <option class="dropdown-item" value="tuesday">Tuesday</option>
+                        <option class="dropdown-item" value="wednesday">Wednesday</option>
+                        <option class="dropdown-item" value="thursday">Thursday</option>
+                        <option class="dropdown-item" value="friday">Friday</option>
+                        <option class="dropdown-item" value="saturday">Saturday</option>
+                    </select><br>
                     <h5>Select Meal</h5>
                     <select id="mealtimebox" class="form-control">
                         <option class="dropdown-item" value="breakfast">Breakfast</option>
@@ -52,23 +62,29 @@
 @parent
 <script>
     const data = JSON.parse("{{$mealtimes}}".replace(/&quot;/gi, "\""));
+    const dayBox = $('select#daybox');
     const mealTimeBox = $('select#mealtimebox');
     const mealItemBox = $('select#mealitembox');
     mealTimeBox.on('change', changeMealTime);
+    dayBox.on('change', changeMealTime);
+
     function changeMealTime(){
         //alert('meal time changed to ' + mealTimeBox.val());
         const newtime = mealTimeBox.val();
+        const newday = dayBox.val();
         const items = [];
         for(let i=0; i<data.length; i++){
             const mealtime = data[i];
-            //console.log("meal time is " + mealtime['time']);
-            if(mealtime['time'] === newtime) {
+            //console.log(newday);
+            if(mealtime['time'] === newtime && mealtime['day'] === newday) {
                 var code = "<option value='??value'>??name</option>";
                 code = code.replace("??value", mealtime['meal_id']);
                 code = code.replace("??name", mealtime['mname']);
                 items.push(code);
             }
         }
+        if(items.length == 0) mealItemBox.hide();
+        else mealItemBox.show();
         //console.log(items);
         mealItemBox.html(items.join(''));
     }
