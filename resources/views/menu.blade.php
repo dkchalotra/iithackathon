@@ -75,6 +75,8 @@
                                 {{$mealItem}}
                             </li>
                         @endforeach
+                        @else
+                            <li class="list-item-meal" style="color: #999999; list-style-type:none;">No Menu Available</li>
                         @endif
                     </ol>
                 </li>
