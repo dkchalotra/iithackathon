@@ -35,7 +35,16 @@
         </div>
     </div>
     <hr>
-
+    @if(session()->has('message'))
+    <br>
+    <div class="row">
+        <div class="col-12">
+            <div class="alert alert-success" role="alert">
+                <i class="fas fa-check"></i> {{session()->get('message')}}
+            </div>
+        </div>
+    </div>
+    @endif
     @foreach($feedbacks as $feedback)
     <div class="row m-0">
             <div class="col feedback-item">
@@ -53,7 +62,7 @@
                             <i class="fas fa-clock"></i>
                             {{Carbon\Carbon::parse($feedback->created_at)->format('d M Y')}}
                     </div>
-                    <button type="button" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i> Delete</button>
+                <a class="btn btn-sm btn-danger" href="/feedback/delete/{{$feedback->id}}"><i class="fas fa-trash-alt"></i> Delete</a>
                 </div>
             </div>
         </div>

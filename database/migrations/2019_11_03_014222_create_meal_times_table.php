@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFeedbackTable extends Migration
+class CreateMealTimesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,13 @@ class CreateFeedbackTable extends Migration
      */
     public function up()
     {
-        Schema::create('feedback', function (Blueprint $table) {
+        Schema::create('meal_times', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('student_id')->unsigned();
             $table->bigInteger('meal_id')->unsigned();
-            $table->string('feedback');
-            $table->dateTime('created_at');
-            $table->foreign('student_id')
-                  ->references('id')->on('students');
+            $table->enum('time', ['breakfast', 'lunch', 'dinner']);
             $table->foreign('meal_id')
-                  ->references('id')->on('meals');
+                    ->references('id')
+                    ->on('meals');
         });
     }
 
@@ -33,6 +30,6 @@ class CreateFeedbackTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('feedback');
+        Schema::dropIfExists('meal_times');
     }
 }

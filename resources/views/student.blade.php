@@ -4,7 +4,7 @@
 @section('head_includes')
     @parent
     <link rel="stylesheet" href="css/cssfile1.css">
-@show
+@endsection
 @section('content')
 @if(session()->has('message'))
 <br>
@@ -50,9 +50,16 @@
                 <div style="font-size:12pt;">Roll No: {{$student->rollno}}</div>
                 <div style="font-size:12pt;">Email: {{$student->email}}</div>
                 <div style="font-size:12pt;">Contact {{$student->contact}}</div>
+                <br>
                 <a class="btn btn-sm btn-danger button" href="/student/delete/{{$student->id}}"><i class="fas fa-trash-alt"></i> Delete</a>
             </div>
         </div>
         <hr>
         @endforeach
+
+<div class="row">
+    <div class="col-8 offset-2">
+        {{$students->render()}}
+    </div>
+</div>
 @endsection

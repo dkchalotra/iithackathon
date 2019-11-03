@@ -22,6 +22,8 @@
                       <br/>
                       <button type="submit" class="btn btn-primary col-12">Login</button>
                 </form>
+                <br>
+                <a class="btn btn-warning col-12" href="/feedback">Want to give meal feedback ?</a>
         </div>
         @if($errors->any())
         <div class="col-4 offset-4" style="margin-top:1em;">

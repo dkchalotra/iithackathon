@@ -64,13 +64,14 @@ Route::post('/meals', function(Illuminate\Http\Request $request){
 Route::get('/meals/delete/{id}', function($id){
     $meal = App\Meal::findOrFail($id);
     $meal->feedbacks()->delete();
+    $meal->timing()->delete();
     $meal->delete();
     return redirect()->back()->with('message', $meal->mname . ' Deleted');
 });
 
 Route::get('/student', function(Illuminate\Http\Request $request){
     if(!hasAuthenticated($request)) return redirect('/');
-    $perpage = 5;
+    $perpage = 10;
     $students = App\Student::orderBy('id', 'desc')->paginate($perpage);
     return view("student", ['students' => $students]);
 });
@@ -109,14 +110,47 @@ Route::get('/meal-menu', function(Illuminate\Http\Request $request){
     if(!hasAuthenticated($request)) return redirect('/');
     return view("menu");
 });
-Route::get('/feedback',function(Illuminate\Http\Request $request){
-    if(!hasAuthenticated($request)) return redirect('/');
-    return view('feedback');
-});
 
 Route::get('/logout', function(Illuminate\Http\Request $request){
     $request->session()->forget([SESSION_KEY_USERNAME, SESSION_KEY_PASSWORD]);
     return redirect('/');
+});
+
+Route::get('/feedback',function(Illuminate\Http\Request $request){
+    // Get all meals items available in the meal time
+    $mealtimes = DB::table('meal_times')
+            ->join('meals', 'meal_times.meal_id', '=', 'meals.id')
+            ->select('meal_times.meal_id', 'meals.mname', 'meal_times.time')
+            ->get();
+    return view('feedbackform', ['mealtimes' => $mealtimes]);
+});
+
+Route::post('/feedback', function(Illuminate\Http\Request $request){
+    $key_rollno = "roll";
+    $key_mealitem = "mealitemid";
+    $key_feedback_text = "feedbacktext";
+    if(!$request->has($key_rollno) || !$request->has($key_mealitem) || !$request->has($key_feedback_text))
+        return Redirect::back();
+    $rollno = $request->get($key_rollno);
+    $mealid = $request->get($key_mealitem);
+    $feedbacktxt = $request->get($key_feedback_text);
+
+    $student = App\Student::where('rollno', '=', $rollno)->firstOrFail();
+    $meal = App\Meal::where('id', '=', $mealid)->firstOrFail();
+
+    $feedback = new App\Feedback();
+    $feedback->student_id = $student->id;
+    $feedback->meal_id = $meal->id;
+    $feedback->feedback = $feedbacktxt;
+    $feedback->created_at = Carbon\Carbon::now();
+    $feedback->save();
+    return Redirect::back()->with('message', 'Your feedback is submitted successfully');
+});
+
+Route::get('/feedback/delete/{id}', function($id){
+    $feedback = App\Feedback::findOrFail($id);
+    $feedback->delete();
+    return redirect()->back()->with('message', 'Feedback Deleted Successfully');
 });
 
 // This method is used to check whether user is authenticated before accessing any admin panel pages

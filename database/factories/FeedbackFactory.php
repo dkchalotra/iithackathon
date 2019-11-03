@@ -12,7 +12,6 @@ $factory->define(Feedback::class, function (Faker $faker) {
         'student_id' => $student->id,
         'meal_id' => $meal->id,
         'feedback' => $faker->text,
-        'rating' => $faker->numberBetween(1,5),
         'created_at' => $faker->dateTime()
     ];
 });
